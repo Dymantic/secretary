@@ -1,0 +1,18 @@
+{
+    "name": "dymantic/secretary",
+    "description": "Message and notification system for basic admin sections. It handles contact forms.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Joyner",
+            "email": "joyner.michael@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dymantic\\Secratary": "src"
+        }
+    }
+}
