@@ -12,7 +12,16 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Dymantic\\Secratary": "src"
+            "Dymantic\\Secretary\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dymantic\\Secretary\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "orchestra/testbench": "^3.5"
     }
 }
