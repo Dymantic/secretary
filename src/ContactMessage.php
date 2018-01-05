@@ -34,4 +34,19 @@ class ContactMessage implements SecretaryMessage
             'message_notes' => json_encode($this->message_notes)
         ];
     }
+
+    public function sender()
+    {
+        return $this->sender;
+    }
+
+    public function senderEmail()
+    {
+        return $this->sender_email;
+    }
+
+    public function messageNotes()
+    {
+        return $this->message_notes ?? [];
+    }
 }
