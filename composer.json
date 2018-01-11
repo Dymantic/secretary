@@ -23,5 +23,15 @@
     "require-dev": {
         "phpunit/phpunit": "^6.5",
         "orchestra/testbench": "^3.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dymantic\\Secretary\\SecretaryServiceProvider"
+            ],
+            "aliases": {
+                "Secretary": "Dymantic\\Secretary\\Facades\\Secretary"
+            }
+        }
     }
 }

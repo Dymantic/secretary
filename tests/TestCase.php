@@ -22,6 +22,13 @@ class TestCase extends OrchestraTestCase
         return [SecretaryServiceProvider::class];
     }
 
+    protected function getPackageAliases($app)
+    {
+        return [
+            'Secretary' => 'Dymantic\Secretary\Facades\Secretary'
+        ];
+    }
+
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'sqlite');
