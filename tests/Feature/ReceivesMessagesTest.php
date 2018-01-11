@@ -53,4 +53,23 @@ class ReceivesMessagesTest extends TestCase
                 $notification->message->sender === 'Test Name';
         });
     }
+
+    /**
+     *@test
+     */
+    public function it_wont_notify_channels_that_are_not_in_the_config()
+    {
+        Notification::fake();
+
+        $this->app['config']->set('secretary.notification_channels', ['mail']);
+        $this->app['config']->set('secretary.sends_email_to', 'receiver@example.test');
+        $message = $this->makeMessage();
+        $secretary = $this->app->make(Secretary::class);
+
+        $secretary->receive($message);
+
+        Notification::assertSentTo($secretary, MessageReceived::class, function ($notification, $channels) {
+            return !in_array('slack', $channels);
+        });
+    }
 }

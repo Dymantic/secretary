@@ -15,7 +15,7 @@ class SecretaryServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (!class_exists('CreateSecretaryMessagesTable')) {
+        if (!class_exists('CreateMessagesTable')) {
             $migration_stub = __DIR__ . '/../database/migrations/create_secretary_messages_table.php.stub';
             $migration_name = 'migrations/' . date('Y_m_d_His', time()) . '_create_secretary_messages_table.php';
             $published_migration_path = database_path($migration_name);

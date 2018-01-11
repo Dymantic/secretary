@@ -14,16 +14,18 @@ class MessageReceived extends Notification
     use Queueable;
 
     public $message;
+    private $notification_channels;
 
-    public function __construct(SecretaryMessage $message)
+    public function __construct(SecretaryMessage $message, $notification_channels)
     {
         $this->message = $message;
+        $this->notification_channels = $notification_channels;
     }
 
 
     public function via($notifiable)
     {
-        return config('secretary.notification_channels', []);
+        return $this->notification_channels;
     }
 
 
