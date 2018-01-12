@@ -105,3 +105,23 @@ $form->createMessage(['phone', 'company']);
 ```
 
 ** Note: ** You are responsible for validating the extra fields.
+
+### Database messages
+
+Each message received by your Secretary will be saved to the database. The model is `Dymantic\Secretary\Message` and is just an eloquent model to be used as such, so you may delete, ect at will. The model does include an `archive` method to archive a message, and a `reinstate` which is just the opposite of archive.
+
+The secretary itself has some convenience methods for retrieving messages
+
+```php
+//get all messages
+$secretary->getMessages();
+
+//get archived messages
+$secretary->getArchivedMessages();
+
+//get messages from the last week (does NOT include archived messages)
+$secretary->lastWeeksMessages();
+
+//get messages from the last month (does NOT include archived messages)
+$secretary->lastMonthsMessages();
+```
