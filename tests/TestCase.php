@@ -61,7 +61,7 @@ class TestCase extends OrchestraTestCase
         });
 
         include_once __DIR__ . '/../database/migrations/create_secretary_messages_table.php.stub';
-        (new \CreateMessagesTable())->up();
+        (new \CreateSecretaryMessagesTable())->up();
     }
 
 }
