@@ -5,11 +5,13 @@ A simple way to handle contact forms and such. At the very least, it saves you f
 
 ### Installation and setup
 
+Step 1: Require with composer
+
 ``` php
 composer require dymantic/secretary
 ```
 
-Laravel 5.5 and up should auto-discover the ServiceProvider and Facade, otherwise you can add it yourself to your app config.
+Laravel should auto-discover the ServiceProvider and Facade. If you don't use auto-discovery you can add them yourself to your app config.
 
 ``` php
 //in config/app.php
@@ -28,24 +30,32 @@ Laravel 5.5 and up should auto-discover the ServiceProvider and Facade, otherwis
 ];
 ```
 
-Then publish the config file:
+Step 2: Publish the config file:
 
 ```
 php artisan vendor:publish --provider="Dymantic\Secretary\SecretaryServiceProvider"
 ```
 
-Then add your config accordingly to `config/secretary.php`. Below is an example:
+Step 3: Run the migration
+
+```
+php artisan migrate
+```
+
+Step 4: Set your config accordingly to `config/secretary.php`. Below is an example:
 
 ```php
 <?php
 
 return [
-  'sends_email_to' => '', //the email address you want messages sent to
-  'slack_endpoint' => '', //the slack webhook url for slack notifications
-  'slack_recipient' => '#general', //either a slack channel or user
-  'notification_channels' => ['email']  //these will be passed to the Laravel Notification's via method
+  'sends_email_to' => 'hello@example.test',
+  'slack_endpoint' => 'https://a-totoally-fake-slack-webhook.test/FAKE',
+  'slack_recipient' => '#site_messages',
+  'notification_channels' => ['email', 'slack']
 ];
 ```
+
+Step 5: Use it!
 
 ## Usage
 
