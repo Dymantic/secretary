@@ -10,7 +10,7 @@ class ContactMessage implements SecretaryMessage
     public $sender;
     public $sender_email;
     public $message_body;
-    public $message_fields;
+    public $message_notes;
 
     public function __construct($message)
     {
