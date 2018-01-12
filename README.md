@@ -1,5 +1,4 @@
 # Secretary
-## Still under construction
 
 A simple way to handle contact forms and such. At the very least, it saves you from having to deal with handling that damn contact form for the millionth time. Simply pass the message to your Secretary and it will handle it accordingly, whether it is sending off an email, Slack message, etc. Database records are kept for each message. Only Email and Slack messages are included out of the box, but it is easy to add your own.
 
