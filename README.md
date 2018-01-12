@@ -42,7 +42,7 @@ Step 3: Run the migration
 php artisan migrate
 ```
 
-Step 4: Set your config accordingly to `config/secretary.php`. Below is an example:
+Step 4: Set your config accordingly in `config/secretary.php`. Below is an example:
 
 ```php
 <?php
