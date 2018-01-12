@@ -51,7 +51,7 @@ return [
   'sends_email_to' => 'hello@example.test',
   'slack_endpoint' => 'https://a-totoally-fake-slack-webhook.test/FAKE',
   'slack_recipient' => '#site_messages',
-  'notification_channels' => ['email', 'slack']
+  'notification_channels' => ['mail', 'slack']
 ];
 ```
 
